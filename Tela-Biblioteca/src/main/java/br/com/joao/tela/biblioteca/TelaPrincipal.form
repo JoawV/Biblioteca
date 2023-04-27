@@ -4,15 +4,58 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenuProfile">
+        <Menu class="javax.swing.JMenu" name="jMenuUser">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Perfil"/>
+            <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jMenuUserAncestorAdded"/>
+          </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemProfile">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver perfil"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemNewRegister">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Novo cadastro"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemLogout">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Logout"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuBooks">
           <Properties>
             <Property name="text" type="java.lang.String" value="Livros"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemBookRegister">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastrar "/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemBookRegisterActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemSearch">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar "/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemBookList">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Acervo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemBookListActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuOptions">
           <Properties>

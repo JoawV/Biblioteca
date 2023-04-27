@@ -4,6 +4,8 @@
  */
 package br.com.joao.tela.biblioteca;
 
+import telas.CadastrarLivro;
+
 /**
  *
  * @author João
@@ -27,17 +29,62 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuProfile = new javax.swing.JMenu();
+        jMenuUser = new javax.swing.JMenu();
+        jMenuItemProfile = new javax.swing.JMenuItem();
+        jMenuItemNewRegister = new javax.swing.JMenuItem();
+        jMenuItemLogout = new javax.swing.JMenuItem();
         jMenuBooks = new javax.swing.JMenu();
+        jMenuItemBookRegister = new javax.swing.JMenuItem();
+        jMenuItemSearch = new javax.swing.JMenuItem();
+        jMenuItemBookList = new javax.swing.JMenuItem();
         jMenuOptions = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
 
-        jMenuProfile.setText("Perfil");
-        jMenuBar1.add(jMenuProfile);
+        jMenuUser.setText("Usuário");
+        jMenuUser.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jMenuUserAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        jMenuItemProfile.setText("Ver perfil");
+        jMenuUser.add(jMenuItemProfile);
+
+        jMenuItemNewRegister.setText("Novo cadastro");
+        jMenuUser.add(jMenuItemNewRegister);
+
+        jMenuItemLogout.setText("Logout");
+        jMenuUser.add(jMenuItemLogout);
+
+        jMenuBar1.add(jMenuUser);
 
         jMenuBooks.setText("Livros");
+
+        jMenuItemBookRegister.setText("Cadastrar ");
+        jMenuItemBookRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemBookRegisterActionPerformed(evt);
+            }
+        });
+        jMenuBooks.add(jMenuItemBookRegister);
+
+        jMenuItemSearch.setText("Buscar ");
+        jMenuBooks.add(jMenuItemSearch);
+
+        jMenuItemBookList.setText("Acervo");
+        jMenuItemBookList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemBookListActionPerformed(evt);
+            }
+        });
+        jMenuBooks.add(jMenuItemBookList);
+
         jMenuBar1.add(jMenuBooks);
 
         jMenuOptions.setText("Opções");
@@ -59,6 +106,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(416, 308));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuUserAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuUserAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuUserAncestorAdded
+
+    private void jMenuItemBookListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBookListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemBookListActionPerformed
+
+    private void jMenuItemBookRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBookRegisterActionPerformed
+        // TODO add your handling code here:
+        CadastrarLivro cv = new CadastrarLivro();
+        cv.setVisible(true);
+    }//GEN-LAST:event_jMenuItemBookRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,7 +159,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuBooks;
+    private javax.swing.JMenuItem jMenuItemBookList;
+    private javax.swing.JMenuItem jMenuItemBookRegister;
+    private javax.swing.JMenuItem jMenuItemLogout;
+    private javax.swing.JMenuItem jMenuItemNewRegister;
+    private javax.swing.JMenuItem jMenuItemProfile;
+    private javax.swing.JMenuItem jMenuItemSearch;
     private javax.swing.JMenu jMenuOptions;
-    private javax.swing.JMenu jMenuProfile;
+    private javax.swing.JMenu jMenuUser;
     // End of variables declaration//GEN-END:variables
 }

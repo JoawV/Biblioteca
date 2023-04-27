@@ -111,6 +111,7 @@ public class loginProvisórioFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         cadastroDialog cadastro = new cadastroDialog(this,true);
         cadastro.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
     private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyPressed
