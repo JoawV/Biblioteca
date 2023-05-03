@@ -31,7 +31,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuUser = new javax.swing.JMenu();
         jMenuItemProfile = new javax.swing.JMenuItem();
-        jMenuItemNewRegister = new javax.swing.JMenuItem();
         jMenuItemLogout = new javax.swing.JMenuItem();
         jMenuBooks = new javax.swing.JMenu();
         jMenuItemBookRegister = new javax.swing.JMenuItem();
@@ -55,9 +54,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuItemProfile.setText("Ver perfil");
         jMenuUser.add(jMenuItemProfile);
-
-        jMenuItemNewRegister.setText("Novo cadastro");
-        jMenuUser.add(jMenuItemNewRegister);
 
         jMenuItemLogout.setText("Logout");
         jMenuUser.add(jMenuItemLogout);
@@ -162,7 +158,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemBookList;
     private javax.swing.JMenuItem jMenuItemBookRegister;
     private javax.swing.JMenuItem jMenuItemLogout;
-    private javax.swing.JMenuItem jMenuItemNewRegister;
     private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenuItem jMenuItemSearch;
     private javax.swing.JMenu jMenuOptions;

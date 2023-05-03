@@ -27,7 +27,6 @@ public class cadastroDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
         jLabelCPF = new javax.swing.JLabel();
         jLabelEmail = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
@@ -35,12 +34,10 @@ public class cadastroDialog extends javax.swing.JDialog {
         jTextFieldEmail = new javax.swing.JTextField();
         jTextFieldPassword = new javax.swing.JTextField();
         jLabelCadastro = new javax.swing.JLabel();
-        jCheckBoxTermos = new javax.swing.JCheckBox();
         jButtonContinue = new javax.swing.JButton();
         jLabelConfirmPassword = new javax.swing.JLabel();
         jTextFieldConfirmPassword = new javax.swing.JTextField();
-
-        jRadioButton1.setText("jRadioButton1");
+        ClearJB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -63,11 +60,9 @@ public class cadastroDialog extends javax.swing.JDialog {
         });
 
         jLabelCadastro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelCadastro.setText("CADASTRO");
+        jLabelCadastro.setText("Cadastro de Usuário");
 
-        jCheckBoxTermos.setText("Concordo com os termos");
-
-        jButtonContinue.setText("Continuar");
+        jButtonContinue.setText("Cadastrar");
         jButtonContinue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonContinueActionPerformed(evt);
@@ -82,38 +77,39 @@ public class cadastroDialog extends javax.swing.JDialog {
             }
         });
 
+        ClearJB.setText("Limpar");
+        ClearJB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearJBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jCheckBoxTermos)
-                .addGap(31, 31, 31)
-                .addComponent(jButtonContinue)
-                .addContainerGap(78, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelCadastro)
+                    .addComponent(jLabelConfirmPassword)
+                    .addComponent(jLabelCPF)
+                    .addComponent(jLabelEmail)
+                    .addComponent(jLabelPassword)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabelCadastro))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabelEmail)
-                        .addComponent(jLabelPassword)
-                        .addComponent(jLabelConfirmPassword)
-                        .addComponent(jLabelCPF)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldConfirmPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldCPF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(93, 93, 93))
+                        .addComponent(jButtonContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ClearJB, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldConfirmPassword)
+                    .addComponent(jTextFieldPassword)
+                    .addComponent(jTextFieldEmail)
+                    .addComponent(jTextFieldCPF))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabelCadastro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelCPF)
@@ -131,14 +127,14 @@ public class cadastroDialog extends javax.swing.JDialog {
                 .addComponent(jLabelConfirmPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextFieldConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxTermos)
-                    .addComponent(jButtonContinue))
-                .addGap(25, 25, 25))
+                    .addComponent(jButtonContinue)
+                    .addComponent(ClearJB))
+                .addGap(28, 28, 28))
         );
 
-        setSize(new java.awt.Dimension(430, 433));
+        setSize(new java.awt.Dimension(325, 405));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -160,6 +156,14 @@ public class cadastroDialog extends javax.swing.JDialog {
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonContinueActionPerformed
+
+    private void ClearJBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearJBActionPerformed
+        // TODO add your handling code here:
+        jTextFieldCPF.setText("");
+        jTextFieldEmail.setText("");
+        jTextFieldPassword.setText("");
+        jTextFieldConfirmPassword.setText("");
+    }//GEN-LAST:event_ClearJBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,14 +208,13 @@ public class cadastroDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ClearJB;
     private javax.swing.JButton jButtonContinue;
-    private javax.swing.JCheckBox jCheckBoxTermos;
     private javax.swing.JLabel jLabelCPF;
     private javax.swing.JLabel jLabelCadastro;
     private javax.swing.JLabel jLabelConfirmPassword;
     private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelPassword;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JTextField jTextFieldCPF;
     private javax.swing.JTextField jTextFieldConfirmPassword;
     private javax.swing.JTextField jTextFieldEmail;

@@ -17,11 +17,6 @@
                 <Property name="text" type="java.lang.String" value="Ver perfil"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemNewRegister">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Novo cadastro"/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemLogout">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Logout"/>
