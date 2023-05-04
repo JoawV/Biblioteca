@@ -11,7 +11,7 @@ package br.com.joao.tela.biblioteca;
 public class TelaBiblioteca {
 
     public static void main(String[] args) {
-        loginProvisórioFrame login = new loginProvisórioFrame();
-        login.setVisible(true);
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setVisible(true);
     }
 }

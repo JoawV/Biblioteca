@@ -5,6 +5,9 @@
 package br.com.joao.tela.biblioteca;
 
 import telas.CadastrarLivro;
+import telas.VerLivrosJDialog;
+import telas.emprestimosjD;
+import telas.lojajD;
 
 /**
  *
@@ -28,94 +31,131 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuUser = new javax.swing.JMenu();
-        jMenuItemProfile = new javax.swing.JMenuItem();
-        jMenuItemLogout = new javax.swing.JMenuItem();
-        jMenuBooks = new javax.swing.JMenu();
-        jMenuItemBookRegister = new javax.swing.JMenuItem();
-        jMenuItemSearch = new javax.swing.JMenuItem();
-        jMenuItemBookList = new javax.swing.JMenuItem();
-        jMenuOptions = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
+        setPreferredSize(new java.awt.Dimension(500, 450));
+        setResizable(false);
 
-        jMenuUser.setText("Usuário");
-        jMenuUser.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jMenuUserAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-
-        jMenuItemProfile.setText("Ver perfil");
-        jMenuUser.add(jMenuItemProfile);
-
-        jMenuItemLogout.setText("Logout");
-        jMenuUser.add(jMenuItemLogout);
-
-        jMenuBar1.add(jMenuUser);
-
-        jMenuBooks.setText("Livros");
-
-        jMenuItemBookRegister.setText("Cadastrar ");
-        jMenuItemBookRegister.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Cadastrar Livro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemBookRegisterActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jMenuBooks.add(jMenuItemBookRegister);
 
-        jMenuItemSearch.setText("Buscar ");
-        jMenuBooks.add(jMenuItemSearch);
+        jButton2.setText("Opções");
 
-        jMenuItemBookList.setText("Acervo");
-        jMenuItemBookList.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Loja");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemBookListActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        jMenuBooks.add(jMenuItemBookList);
 
-        jMenuBar1.add(jMenuBooks);
+        jButton4.setText("Empréstimos");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
-        jMenuOptions.setText("Opções");
-        jMenuBar1.add(jMenuOptions);
+        jButton5.setText("Consultar acervo");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        jLabel1.setText("Biblioteca");
+
+        jButton6.setText("Sair");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
+                .addGap(133, 133, 133))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(28, 28, 28)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(416, 308));
+        setSize(new java.awt.Dimension(449, 399));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuUserAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuUserAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuUserAncestorAdded
-
-    private void jMenuItemBookListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBookListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItemBookListActionPerformed
-
-    private void jMenuItemBookRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBookRegisterActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         CadastrarLivro cv = new CadastrarLivro();
         cv.setVisible(true);
-    }//GEN-LAST:event_jMenuItemBookRegisterActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        VerLivrosJDialog view = new VerLivrosJDialog(null,true);
+        view.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        emprestimosjD loan = new emprestimosjD(null, true);
+        loan.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        lojajD store = new lojajD(null, true);
+        store.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,14 +193,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jMenuBooks;
-    private javax.swing.JMenuItem jMenuItemBookList;
-    private javax.swing.JMenuItem jMenuItemBookRegister;
-    private javax.swing.JMenuItem jMenuItemLogout;
-    private javax.swing.JMenuItem jMenuItemProfile;
-    private javax.swing.JMenuItem jMenuItemSearch;
-    private javax.swing.JMenu jMenuOptions;
-    private javax.swing.JMenu jMenuUser;
     // End of variables declaration//GEN-END:variables
 }
