@@ -6,6 +6,7 @@ package telas;
 
 import controle.FluxoLivros;
 import dados.Livros;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
@@ -14,6 +15,8 @@ import javax.swing.JOptionPane;
  * @author João
  */
 public class CadastrarLivro extends javax.swing.JFrame {
+    public static ArrayList<Livros> livros = new ArrayList<>();
+    
 
     FluxoLivros FL = new FluxoLivros();
     /**
@@ -89,14 +92,13 @@ public class CadastrarLivro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSee)
@@ -104,12 +106,11 @@ public class CadastrarLivro extends javax.swing.JFrame {
                         .addComponent(jButtonExit))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(39, 39, 39)
                             .addComponent(jLabelGender)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jTextFieldGender, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(51, 51, 51)
+                            .addGap(8, 8, 8)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(jLabelAutor)
@@ -123,7 +124,7 @@ public class CadastrarLivro extends javax.swing.JFrame {
                                     .addComponent(jLabelName)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +147,7 @@ public class CadastrarLivro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelYear)
                     .addComponent(jTextFieldYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSave)
                     .addComponent(jButtonExit)
@@ -154,29 +155,27 @@ public class CadastrarLivro extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
-        setSize(new java.awt.Dimension(422, 385));
+        setSize(new java.awt.Dimension(416, 408));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         // TODO add your handling code here:
-        Livros livros = new Livros();
         
-        livros.setNome(jTextFieldName.getText());
-        livros.setAutor(jTextFieldAutor.getText());
-        livros.setGenero(jTextFieldGender.getText());
-        livros.setAno(jTextFieldYear.getText());
+        String Nome = jTextFieldName.getText();
+        String Autor = jTextFieldAutor.getText();
+        String Genero = jTextFieldGender.getText();
+        String Ano = jTextFieldYear.getText();
         
-        if (FL.salvar(livros)) {
-            JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
-            jTextFieldName.setText("");
-            jTextFieldAutor.setText("");
-            jTextFieldGender.setText("");
-            jTextFieldYear.setText("");
-            jTextFieldName.requestFocus();
-        } else {
-            JOptionPane.showMessageDialog(null, "Erro ao cadastar livro.");
-        }
+        Livros books = new Livros(Nome,Autor,Genero,Ano);
+        livros.add(books);
+        
+        JOptionPane.showMessageDialog(this,"Cadastro completo!");
+        
+        jTextFieldName.setText("");
+        jTextFieldAutor.setText("");
+        jTextFieldGender.setText("");
+        jTextFieldYear.setText("");
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed

@@ -28,6 +28,7 @@ public class emprestimosjD extends javax.swing.JDialog {
     private void initComponents() {
 
         BackjB = new javax.swing.JButton();
+        SearchjB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -38,24 +39,30 @@ public class emprestimosjD extends javax.swing.JDialog {
             }
         });
 
+        SearchjB.setText("Buscar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(171, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
+                .addComponent(SearchjB)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addComponent(BackjB)
-                .addGap(157, 157, 157))
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(241, Short.MAX_VALUE)
-                .addComponent(BackjB)
-                .addGap(36, 36, 36))
+                .addContainerGap(437, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BackjB)
+                    .addComponent(SearchjB))
+                .addGap(40, 40, 40))
         );
 
-        setSize(new java.awt.Dimension(416, 308));
+        setSize(new java.awt.Dimension(416, 508));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -108,5 +115,6 @@ public class emprestimosjD extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackjB;
+    private javax.swing.JButton SearchjB;
     // End of variables declaration//GEN-END:variables
 }

@@ -50,12 +50,12 @@ public class lojajD extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(239, Short.MAX_VALUE)
+                .addContainerGap(439, Short.MAX_VALUE)
                 .addComponent(BackjB)
                 .addGap(38, 38, 38))
         );
 
-        setSize(new java.awt.Dimension(416, 308));
+        setSize(new java.awt.Dimension(416, 508));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
