@@ -8,6 +8,7 @@ import telas.CadastrarLivro;
 import telas.VerLivrosJDialog;
 import telas.emprestimosjD;
 import telas.lojajD;
+import telas.opções;
 
 /**
  *
@@ -53,6 +54,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jButton2.setText("Opções");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Loja");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +162,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lojajD store = new lojajD(null, true);
         store.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        opções options = new opções(null, true);
+        options.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

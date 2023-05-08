@@ -4,11 +4,16 @@
  */
 package telas;
 
+import dados.Livros;
+import javax.swing.table.DefaultTableModel;
+import static telas.CadastrarLivro.livros;
+
 /**
  *
  * @author João
  */
 public class lojajD extends javax.swing.JDialog {
+    DefaultTableModel modelList = new DefaultTableModel();
 
     /**
      * Creates new form lojajD
@@ -28,6 +33,22 @@ public class lojajD extends javax.swing.JDialog {
     private void initComponents() {
 
         BackjB = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        NameTF = new javax.swing.JTextField();
+        AutorTF = new javax.swing.JTextField();
+        CategoryTF = new javax.swing.JTextField();
+        YearTF = new javax.swing.JTextField();
+        SearchjB = new javax.swing.JButton();
+        TittlejL = new javax.swing.JLabel();
+        SubjL = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablejT = new javax.swing.JTable();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -38,24 +59,134 @@ public class lojajD extends javax.swing.JDialog {
             }
         });
 
+        jLabel1.setText("Titulo:");
+
+        jLabel2.setText("Autor");
+
+        jLabel3.setText("Gênero");
+
+        jLabel4.setText("Ano de publicação");
+
+        NameTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameTFActionPerformed(evt);
+            }
+        });
+
+        SearchjB.setText("Buscar");
+        SearchjB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchjBActionPerformed(evt);
+            }
+        });
+
+        TittlejL.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        TittlejL.setText("Lirvos disponiveis na loja");
+
+        SubjL.setText("Consulte para ver quais livros estão disponiveis para venda.");
+
+        jButton2.setText("Limpar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        TablejT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Título", "Autor", "Categoria", "Ano de Publicação"
+            }
+        ));
+        jScrollPane1.setViewportView(TablejT);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CategoryTF))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AutorTF))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(YearTF)
+                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(BackjB)
-                .addGap(158, 158, 158))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(TittlejL))
+                            .addComponent(SubjL)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(SearchjB)
+                        .addGap(50, 50, 50)
+                        .addComponent(jButton2)
+                        .addGap(50, 50, 50)
+                        .addComponent(BackjB)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(439, Short.MAX_VALUE)
-                .addComponent(BackjB)
-                .addGap(38, 38, 38))
+                .addContainerGap()
+                .addComponent(TittlejL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SubjL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(NameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(YearTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(AutorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(CategoryTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchjB)
+                    .addComponent(BackjB)
+                    .addComponent(jButton2))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(416, 508));
+        setSize(new java.awt.Dimension(466, 508));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -63,6 +194,44 @@ public class lojajD extends javax.swing.JDialog {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_BackjBActionPerformed
+
+    private void NameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameTFActionPerformed
+
+    private void SearchjBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchjBActionPerformed
+        // TODO add your handling code here:
+        String titulo = NameTF.getText();
+        String autor = AutorTF.getText();
+        String genero = CategoryTF.getText();
+        String ano = YearTF.getText();
+        
+        modelList.addColumn("Livro");
+        modelList.addColumn("Autor");
+        modelList.addColumn("Gênero");
+        modelList.addColumn("Ano");
+        
+        for(Livros lista: livros) {
+           modelList.addRow(new Object[]{
+               lista.getNome().equalsIgnoreCase(titulo) &&
+                lista.getAutor().equalsIgnoreCase(autor) &&
+                lista.getGenero().equalsIgnoreCase(genero) &&
+                lista.getAno().equalsIgnoreCase(ano)});
+        }
+        
+        modelList.setColumnCount(4);
+        modelList.setRowCount(2);
+
+        TablejT.setModel(modelList);
+    }//GEN-LAST:event_SearchjBActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        NameTF.setText("");
+        AutorTF.setText("");
+        CategoryTF.setText("");
+        YearTF.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,6 +276,22 @@ public class lojajD extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AutorTF;
     private javax.swing.JButton BackjB;
+    private javax.swing.JTextField CategoryTF;
+    private javax.swing.JTextField NameTF;
+    private javax.swing.JButton SearchjB;
+    private javax.swing.JLabel SubjL;
+    private javax.swing.JTable TablejT;
+    private javax.swing.JLabel TittlejL;
+    private javax.swing.JTextField YearTF;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }
