@@ -106,6 +106,9 @@ public class VerLivrosJDialog extends javax.swing.JDialog {
 
     private void RefreshjBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshjBActionPerformed
         // TODO add your handling code here:
+        modelList.setColumnCount(0);
+        modelList.setRowCount(0);
+        
         modelList.addColumn("Livro");
         modelList.addColumn("Autor");
         modelList.addColumn("Gênero");
@@ -115,8 +118,6 @@ public class VerLivrosJDialog extends javax.swing.JDialog {
            modelList.addRow(new Object[]{
                lista.getNome(),lista.getAutor(),lista.getGenero(),lista.getAno()});
         }
-        modelList.setColumnCount(4);
-        modelList.setRowCount(2);
         
         jtTabela.setModel(modelList);
     }//GEN-LAST:event_RefreshjBActionPerformed
