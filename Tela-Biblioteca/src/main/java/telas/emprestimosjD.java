@@ -170,12 +170,13 @@ public class emprestimosjD extends javax.swing.JDialog {
                     .addComponent(jLabel3)
                     .addComponent(CategoryTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(AutorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
-                        .addComponent(YearTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(YearTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(AutorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
@@ -204,14 +205,15 @@ public class emprestimosjD extends javax.swing.JDialog {
         String autor = AutorTF.getText();
         String genero = CategoryTF.getText();
         String ano = YearTF.getText();
+        
+        modelList.addColumn("Livro");
+        modelList.addColumn("Autor");
+        modelList.addColumn("Genero");
+        modelList.addColumn("Ano de publicação");
 
         for (Livros livro : livros) {
             if (livro.getNome().toUpperCase().contains(titulo.toUpperCase()) && livro.getAutor().toUpperCase().contains(autor.toUpperCase()) && 
                     livro.getGenero().toUpperCase().contains(genero.toUpperCase()) && livro.getAno().toUpperCase().contains(ano.toUpperCase())) {
-                modelList.addColumn("Livro");
-                      modelList.addColumn("Autor");
-                            modelList.addColumn("Genero");
-                                  modelList.addColumn("Ano de publicação");
                 modelList.addRow(new Object[]{
                       livro.getNome(),
                         livro.getAutor(),
